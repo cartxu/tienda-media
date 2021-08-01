@@ -1,0 +1,79 @@
+{{!-- BÚSQUEDA --}}
+
+<div class="col-md-8 mx-auto">
+  <form class="d-flex" action="/products/search" method="GET">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Busca un producto..."
+      aria-label="Search"
+      name="title"
+    />
+    <button class="btn btn-outline-info" type="submit">Search</button>
+  </form>
+
+{{!-- CATEGORÍAS --}}
+
+<nav aria-label="breadcrumb ">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/products/cat/joyas">Joyas</a></li>
+    <li class="breadcrumb-item" aria-current="page"><a href="/products/cat/utensilios">Utensilios</a> </li>
+    <li class="breadcrumb-item" aria-current="page"><a href="/products/cat/ropa">Ropa</a> </li>
+    <li class="breadcrumb-item" aria-current="page"><a href="/products/cat/decoracion">Decoración</a> </li>
+    <li class="breadcrumb-item" aria-current="page"><a href="/products/cat/animales">Animales</a> </li>
+    <li class="breadcrumb-item" aria-current="page"><a href="/products/cat/complementos">Complementos</a> </li>
+    <li class="breadcrumb-item" aria-current="page"><a href="/products/cat/armas">Armas</a> </li>
+  </ol>
+</nav>
+
+
+
+{{!-- ORDEN --}}
+
+  <div class="mb-4 mt-4 text-center border p-2">
+    <form action="/products/order" method="get">
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="order"
+          id="inlineRadio1"
+          value="caro"
+        />
+        <label class="form-check-label" for="inlineRadio1">Más caro</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="order"
+          id="inlineRadio1"
+          value="barato"
+        />
+        <label class="form-check-label" for="inlineRadio1">Más barato</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="order"
+          id="inlineRadio2"
+          value="ventas"
+        />
+        <label class="form-check-label" for="inlineRadio2">Ventas</label>
+      </div>
+      <div class="form-check form-check-inline mb-3">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="order"
+          id="inlineRadio3"
+          value="titulo"
+        />
+        <label class="form-check-label" for="inlineRadio3">Título</label>
+      </div>
+      <br>
+      <input class="btn btn-warning rounded-pill btn-sm" value="Ordenar" type="submit">
+    </form>
+  </div>
+</div>

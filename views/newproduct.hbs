@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    {{#if message}}
+    {{> message}}
+    {{/if}}
+    <form action="{{#if product}}/products/{{product._id}}?_method=PUT{{else}}/products{{/if}}" method="POST">
+      <input
+        class="form-control mb-3"
+        name="title"
+        type="text"
+        {{#if product}}value="{{product.title}}"{{else}}placeholder="Título"{{/if}}
+      />
+      <textarea
+        class="form-control mb-3"
+        name="description"
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Descripción del producto"
+      >{{#if product}}{{product.description}}{{/if}}</textarea>
+      <input
+        class="form-control mb-3"
+        name="image"
+        type="text"
+        {{#if product}}value="{{product.image}}"{{else}}placeholder="URL de la imagen"{{/if}}
+      />
+      <input
+        class="form-control mb-3"
+        name="price"
+        type="number"
+        {{#if product}}value="{{product.price}}"{{else}}placeholder="Precio(€)"{{/if}}
+      />
+      <select
+        class="form-control mb-3"
+        name="state"
+        id="state"
+        placeholder="Estado del producto"
+        value="{{#if product}}{{product.state}}{{/if}}"
+      >
+        <option value="as new">Como nuevo</option>
+        <option value="used but good">Poco uso</option>
+        <option value="small damages">Pequeños daños</option>
+        <option value="need repair">Necesita reparación</option>
+      </select>
+      <select
+        class="form-control mb-3"
+        name="category"
+        id="category"
+        placeholder="Categoría"
+        value="{{#if product}}{{product.category}}{{/if}}"
+      >
+        <option value="joyas">Joyas</option>
+        <option value="animales">Animales</option>
+        <option value="utensilios">Utensilios</option>
+        <option value="decoracion">Decoración</option>
+        <option value="ropa">Ropa</option>
+        <option value="armas">Armas</option>
+        <option value="complementos">Complementos</option>
+      </select>
+      <input
+        class="form-control mb-3"
+        name="owner"
+        type="text"
+        value="{{user.username}}"
+        style="display: none;"
+      />
+      <input class="btn btn-info mb-3" type="submit" value="Publicar" />
+
+    </form>
+  </div>
+
+</div>

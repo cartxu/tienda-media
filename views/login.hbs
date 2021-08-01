@@ -1,0 +1,18 @@
+
+<div class="row justify-content-center">
+    <div class="col-md-8 ">
+    <h1>Login</h1>
+    <p>Introduce tus datos para acceder a tu cuenta</p>
+    {{>error}}
+    {{>message}}
+    <form action="/users/login" method="POST">
+        <input class="form-control mb-3" name="username" type="text" placeholder="Usuario">
+        <input class="form-control mb-3" name="password" type="password" placeholder="Contraseña">
+        <input class="btn btn-info mb-3" type="submit" value="Entrar">
+    </form>  
+    <div><span>¿No tienes cuenta? <a href="/users/register">Regístrate aquí</a> </span></div>
+    </div>
+    
+
+</div>
+

@@ -1,0 +1,74 @@
+{{> search}}
+
+{{#if products}}
+  <div class="row justify-content-center">
+    
+    {{#each products}}
+      <div class="col-auto">
+        <div class="card shadow-sm m-2" style="width: 18rem;">
+
+            <img src="{{image}}" class="card-img-top" alt="..." />
+
+          <div class="card-header text-center">
+            <strong>{{title}}</strong>
+            <p class="card-text badge bg-warning">{{price}}€ </p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{description}}</p>
+
+          </div>
+          <div class="card-footer bg-transparent">
+
+            <div class="row justify-content-center">
+              {{#ifCond owner ../username}}
+                  <div class="col text-center">
+                    <button href="#" class="btn btn-outline-success shadow-sm">Ventas <i class="fas fa-dollar-sign"></i></button>
+                  </div> 
+              {{else}}
+                  <div class="col text-center">
+                    <form action="/compras" method="POST">
+                    <input type="text" name="username" value="{{username}}" style="display: none;">
+                    <input type="text" name="title" value="{{title}}" style="display: none;">
+                    <input type="text" name="owner" value="{{owner}}" style="display: none;">
+                    <input type="text" name="price" value="{{price}}" style="display: none;">
+                    <button type="submit" class="btn btn-success shadow-sm">Comprar <i
+                        class="fas fa-shopping-bag"
+                      ></i></button>
+                      </form>
+                  </div> 
+              {{/ifCond}}
+        
+            </div>
+          </div>
+          <div class="card-footer bg-info">
+            
+            <div class="pie">
+            <span class="text-light">
+              <i class="fas fa-user"></i>
+              {{owner}}</span>
+              {{#if ../user}}
+             {{#ifCond owner ../username}}
+              <div class="edit">
+                <form action="/products/{{_id}}?_method=DELETE" method="POST">
+                  <button class="btn btn-danger" type="submit">
+                    <i class="fas fa-trash text-light"></i>
+                  </button></form>
+              
+                <form action="/products/edit/{{_id}}" method="get">
+                  <button class="btn btn-secondary" type="submit">
+                    <i class="fas fa-pencil-alt text-light"></i>
+                  </button></form>
+              </div>
+              {{/ifCond}}
+              {{/if}}
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <div class="alert alert-warning"><span>No hay productos a la venta.</span></div>
+
+{{/if}}

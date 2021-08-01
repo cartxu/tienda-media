@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+  <div class="col-lg-3 m-2 bg-warning shadow-sm p-2 rounded text-center">
+    <img
+      src="{{user.avatar}}"
+      alt=""
+      style="width:60%;"
+      class="m-2 bg-secondary rounded-pill shadow-sm"
+    />
+    <br />
+    <h1 class="text-secondary">{{user.username}}</h1>
+    <span class="badge bg-info">{{user.member}}</span>
+
+    <div class="alert alert-warning m-3">
+      {{user.bio}}
+    </div>
+    <form action="/users/{{user.id}}?_method=DELETE" method="POST">
+    <input class="btn btn-danger" type="submit" value="Eliminar cuenta">
+    </form>
+  </div>
+  <div class="col-lg-7 p-3">
+    {{>message}}
+    <form action="/users/{{user.id}}?_method=PUT" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          placeholder="name@example.com"
+          ,
+          value="{{user.username}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="avatar" class="form-label">Avatar URL</label>
+        <input
+          type="text"
+          class="form-control"
+          name="avatar"
+          value="{{user.avatar}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Bio" class="form-label">Bio</label>
+        <textarea
+          class="form-control"
+          name="bio"
+          rows="3"
+        >{{user.bio}}</textarea>
+      </div>
+      <label for="member" class="form-label">Especie</label>
+      <select
+        class="form-control mb-3"
+        name="member"
+        id="member"
+        placeholder="How do you identify yourself?"
+        value="{{user.member}}"
+      >
+        <option value="Hobbit">Hobbit</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Elfo">Elfo</option>
+        <option value="Orco">Orco</option>
+        <option value="Mago">Mago</option>
+        <option value="Enano">Enano</option>
+        <option value="Señor Oscuro">Señor Oscuro</option>
+      </select>
+      <input
+        class="btn btn-warning mb-3 text-light"
+        type="submit"
+        value="Actualizar"
+      />
+    </form>
+  </div>
+</div>

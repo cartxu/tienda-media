@@ -1,0 +1,29 @@
+{{#if users}}
+  <div class="row justify-content-center">
+
+    {{#each users}}
+      <div class="col-auto">
+        <div class="card m-2 p-0" style="width: 18rem;">
+          <div>
+            <img src="{{avatar}}" class="card-img-top bg-light" alt="..."/>
+          </div>
+          
+          <div class="card-header">
+            {{username}}
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{shortDesc bio}}</p>
+            <span class="card-text badge bg-info">{{member}}</span>
+          </div>
+          <div class="card-footer">
+            <a href="/products/user/{{username}}" class="card-link">Productos</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <div class="alert alert-warning"><span>No hay usuarios registrados.</span></div>
+
+{{/if}}
+

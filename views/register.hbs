@@ -1,0 +1,28 @@
+
+<div class="row justify-content-center">
+    <div class="col-md-8 ">
+    <h1>Nuevo usuario</h1>
+    <p>Únete a nuestra comunidad y comienza a ganar dinero</p>
+    {{>error}}
+    {{>message}}
+    <form action="/users/newuser" method="POST">
+        <input class="form-control mb-3" name="username" type="text" placeholder="Usuario">
+        <input class="form-control mb-3" name="email" type="email" placeholder="Correo electrónico">
+        <div id="emailHelp" class="form-text">La contraseña debe tener al menos 5 caracteres.</div>
+        <input class="form-control mb-3" name="password" type="password" placeholder="Contraseña">
+        <div id="emailHelp" class="form-text">Me identifico como...</div>
+        <select class="form-control mb-3" name="member" id="member" placeholder="How do you identify yourself?">
+            <option value="Hobbit">Hobbit</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Elfo">Elfo</option>
+            <option value="Orco">Orco</option>
+            <option value="Mago">Mago</option>
+            <option value="Enano">Enano</option>
+            <option value="Señor Oscuro">Señor Oscuro</option>
+        </select>
+        <input class="btn btn-info mb-3" type="submit" value="Registrar">
+    </form>  
+    </div>
+
+</div>
+
