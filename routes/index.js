@@ -5,6 +5,8 @@ const {
 const router = express.Router();
 const ProductController = require('../controllers/ProductController');
 const Product = require('../models/Product');
+const Compra = require('../models/Compra')
+const CompraController = require('../controllers/CompraController')
 require('../config/mongoose');
 
 router.get('/', function(req, res) {

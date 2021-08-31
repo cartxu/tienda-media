@@ -4,12 +4,10 @@ const ProductSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        unique: true,
     },
     description: {
         type: String,
         required: true,
-        unique: true,
     },
     image: {
         type: String,
@@ -20,8 +18,8 @@ const ProductSchema = new mongoose.Schema({
     },
     state: {
         type: String,
-        default: 'as new',
-        enum: ['as new', 'used but good', 'small damages', 'need repair']
+        default: 'como nuevo',
+        enum: ['como nuevo', 'en buen estado', 'pequeños daños', 'necesita reparación']
     },
     date: {
         type: Date,
@@ -38,7 +36,8 @@ const ProductSchema = new mongoose.Schema({
     },
     sold: {
         type: Boolean,
-        default: false
+        default: false,
+        required: true,
     }
 });
 

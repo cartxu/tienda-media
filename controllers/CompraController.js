@@ -8,11 +8,13 @@ const CompraController = {
         try {
             const sold = { sold: true };
             const compra = await Compra.create(req.body);
-            const products = await Product.find()
             console.log(compra)
-            const productUpdate = await Product.findOneAndUpdate(req.params.title, sold,{
-                new: true
-              });
+            const productUpdate = await Product.findOneAndUpdate(
+                {title: compra.title}, 
+                {sold:true},
+                {new: true}
+            );
+            const products = await Product.find()
               if(!req.user){
                 res.render('products', 
                 {
@@ -35,7 +37,7 @@ const CompraController = {
         }
     }, async getAllCompras(req,res){
         try{
-            const compras = await Compras.find()
+            const compras = await Compra.find()
             const products = await Product.find()
             if(!req.user){
                 res.render('compras', {

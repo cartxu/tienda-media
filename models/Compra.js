@@ -6,9 +6,8 @@ const CompraSchema = new mongoose.Schema({
         required: true,
     },
     title: {
-        trype: String,
+        type: String,
         required: true,
-        unique:true,
     },
     username: {
         type: String,
