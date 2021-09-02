@@ -12,7 +12,7 @@
 
 <img src="/capturas/1.png" alt="vista general La Tienda Media">
 
-##FEATURE 1: GESTIÓN DE USUARIO
+## FEATURE 1: GESTIÓN DE USUARIO
 
 ● Endpoint de Login: `/login`
 
@@ -27,7 +27,7 @@
 <img src="/capturas/4.png" alt="endpoint perfil">
 
 
-##FEATURE 2: GESTIÓN DE PRODUCTO
+## FEATURE 2: GESTIÓN DE PRODUCTO
 
 ● Endpoints añadir, eliminar, modificar producto (vendedor):
 
@@ -54,7 +54,7 @@
 
 
 
-##FEATURE 3: GESTIÓN DE COMPRAS
+## FEATURE 3: GESTIÓN DE COMPRAS
 
 ● Endpoint de añadir compra: `/compras (POST)`
 <img src="/capturas/COMPRAR.png" alt="COMPRAR">
