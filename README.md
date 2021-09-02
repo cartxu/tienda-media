@@ -1,4 +1,4 @@
-##BTC BACKEND - GEEKSHUBS ACADEMY 🚀
+## BTC BACKEND - GEEKSHUBS ACADEMY 🚀
 ### RETO FINAL: E-COMMERCE
 
 - Funcionalidad: API REST
@@ -64,4 +64,4 @@
 
 ● Endpoint eliminar compra: `/:id (DELETE)`
 
-## THE END
+## ¡Hasta pronto Geeks! 🚀
