@@ -6,5 +6,6 @@ const { isAuthenticated } = require('../helpers/auth');
 
 router.post('/', isAuthenticated, CompraController.new);
 router.get('/', CompraController.getAllCompras);
+router.delete('/:id', isAuthenticated, CompraController.deleteCompra);
 
 module.exports = router;

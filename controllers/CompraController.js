@@ -59,6 +59,14 @@ const CompraController = {
                 message: 'No hay compras todavía.'
             })
         }
+    }, async deleteCompra(req,res){
+        try {
+            const compra = await Compra.findByIdAndDelete(req.params.id);
+            const products = await Product.findOneAndUpdate({title:compra.title}, {sold:false}, {new: true})
+            res.redirect('/compras')
+        } catch (error) {
+            console.error(error);
+        }
     }
 }
 

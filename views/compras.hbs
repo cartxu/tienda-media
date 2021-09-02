@@ -13,6 +13,11 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{title}}</h5>
       <small>Comprado a: {{owner}}</small>
+      <form action="/compras/{{_id}}?_method=DELETE" method="POST">
+        <button class="btn btn-danger" type="submit">
+           <i class="fas fa-trash text-light"></i>
+        </button>
+      </form>
     </div>
     <p class="mb-1">{{price}}€</p>
   </div>
