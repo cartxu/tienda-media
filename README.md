@@ -8,7 +8,7 @@
     - Mongoose
     - Git
 
-- Descripción: Para el proyecto final del Bootcampt de Backend Express he representado una tienda de segunda mano ambiendada en la Tierra Media: **La Tienda Media**.
+- Descripción: Para el proyecto final del Bootcamp de Backend Express he representado una tienda de segunda mano ambiendada en la Tierra Media: **La Tienda Media**.
 
 <img src="/capturas/1.png" alt="vista general La Tienda Media">
 
